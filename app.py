@@ -20,7 +20,7 @@ items = get_data()
 for item in items[0:10]:
     if item['Make'] == 'BMW':
         st.write(
-            f"La {item['Make']} {item['Model']} a {item['Engine HP']} chevaux et {item['Engine Cylinders']}")
+            f"La {item['Make']} {item['Model']} a {item['Engine HP']} chevaux et {item['Engine Cylinders']} cylindres")
 
 
 cars = client.cars.info
