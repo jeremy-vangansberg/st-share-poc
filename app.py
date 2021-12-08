@@ -4,7 +4,7 @@ from pymongo import MongoClient
 client = MongoClient(**st.secrets['mongo'])
 
 
-@st.cache(ttl=100)
+@st.cache(ttl=300)
 def get_data():
     db = client.cars
     items = db.info.find()
