@@ -1,8 +1,7 @@
 import streamlit as st
 from pymongo import MongoClient
 
-client = MongoClient(
-    'mongodb+srv://jvsimplon:1234@cluster0.njzrg.mongodb.net/cars?retryWrites=true&w=majority')
+client = MongoClient(**st.secrets['mongo'])
 
 
 @st.cache(ttl=100)
