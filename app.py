@@ -4,15 +4,9 @@ from pymongo import MongoClient
 client = MongoClient(**st.secrets['mongo'])
 
 
-@st.cache(ttl=300)
-def get_data():
-    db = client.cars
-    items = db.info.find()
-    items = list(items)  # make hashable for st.cache
-    return items
-
-
-items = get_data()
+db = client.cars
+items = db.info.find()
+items = list(items)  # make hashable for st.cache
 
 # st.write(items)
 
